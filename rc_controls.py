@@ -40,11 +40,13 @@ while key != ord('q'):
     stdscr.refresh()
 
     if key == curses.KEY_UP:
-            leftPwm = pwmMax
+            #leftPwm = pwmMax #current runs backwords
+            leftPwm = pwmMin #attempt to invert the movement
             rightPwm = pwmMax
 
     elif key == curses.KEY_DOWN:
-            leftPwm = pwmMin
+            #leftPwm = pwmMin #current runs backwords
+            leftPwm = pwmMax #invert movement
             rightPwm = pwmMin
 
     elif key == curses.KEY_RIGHT:
