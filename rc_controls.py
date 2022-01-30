@@ -40,21 +40,23 @@ while key != ord('q'):
     stdscr.refresh()
 
     if key == curses.KEY_UP:
-            #leftPwm = pwmMax #current runs backwords
+            #leftPwm = pwmMax #if motors are going the same direction
             leftPwm = pwmMin #attempt to invert the movement
             rightPwm = pwmMax
 
     elif key == curses.KEY_DOWN:
-            #leftPwm = pwmMin #current runs backwords
+            #leftPwm = pwmMin #if motors are going the same direction
             leftPwm = pwmMax #invert movement
             rightPwm = pwmMin
 
     elif key == curses.KEY_RIGHT:
-            leftPwm = pwmMax
+            #leftPwm = pwmMax #if motors are going the same direction
+            leftPwm = pwmMin #invert the direction to correct 
             rightPwm = pwmMin
 
     elif key == curses.KEY_LEFT:
-            leftPwm = pwmMin
+            #leftPwm = pwmMin #if motors are going the same direction
+            leftPwm = pwmMax
             rightPwm = pwmMax
 
     elif key == curses.KEY_NPAGE:
